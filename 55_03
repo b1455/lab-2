@@ -1,11 +1,22 @@
-#GCD and LCM are not in math module . They are in gmpy , but these are simple enough:
+# Python program to find the L.C.M. of two input number
 
-def gcb(a, b):
-"""compute the greatest common divisor of a and b"""
-while b > 0:
-a, b = b, a % b
-return a
+# This function computes GCD 
+def compute_gcd(x, y):
 
-def lcm(a, b):
-"""compute the lowest common multiple of a and b"""
-return a*b / gcd(a, b)
+   while(y):
+       x, y = y, x % y
+   return x
+
+# This function computes LCM
+def compute_lcm(x, y):
+   lcm = (x*y)//compute_gcd(x,y)
+   return lcm
+
+num1 = 54
+num2 = 24 
+
+print("The L.C.M. is", compute_lcm(num1, num2))
+
+Output
+
+The L.C.M. is 216
